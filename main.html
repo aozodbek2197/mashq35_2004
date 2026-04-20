@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PWA Example</title>
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <h1>PWA Test Sahifasi</h1>
+    <p>Agar internet yo‘q bo‘lsa, bu xabar ko‘rinadi (offline).</p>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js').then(() => console.log('SW ro‘yxatdan o‘tdi'));
+        }
+        window.addEventListener('offline', () => alert('Internet uzildi! Offline rejimda ishlaysiz.'));
+    </script>
+</body>
+</html>
